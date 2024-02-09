@@ -1,0 +1,19 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/rubenledesma10/tienda_electrodomesticos_microservicios
+          searchPaths: config-data
+          username: ${GIT_USER}
+          password: ${GIT_PASSWORD}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-sv:8761/eureka

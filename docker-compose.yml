@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+  eureka-sv:
+    container_name: eureka-sv
+    image: eureka:1
+    build: eureka-sv
+    mem_limit: 512m
+    ports:
+      - "8761:8761"
+    networks:
+      - 'tiendaelectrodomesticos-network'
+  mysql-db:
+    container_name: mysql-db
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+     - MYSQL_PASSWORD=181222root
+     - MYSQL_ROOT_PASSWORD=181222root
+    networks:
+      - 'tiendaelectrodomesticos-network' 
+  productos-servicies:
+    container_name: productos-servicies
+    image: productos:1
+    build: productos-servicies
+    ports:
+      - "8082:8082"
+    environment:
+      - DATABASE_URL=jdbc:mysql://mysql-db:3306/integrador_productos
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=181222root
+    depends_on:
+      - mysql-db
+    networks:
+      - 'tiendaelectrodomesticos-network' 
+  carritos-servicies:
+    container_name: carritos-servicies
+    image: carrito:1
+    build: carritos-servicies
+    ports:
+      - "8083:8083"
+    environment:
+      - DATABASE_URL=jdbc:mysql://mysql-db:3306/integrador_carrito
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=181222root
+    depends_on:
+      - mysql-db
+    networks:
+      - 'tiendaelectrodomesticos-network'
+  ventas-servicies:
+    container_name: ventas-servicies
+    image: ventas:1
+    build: ventas-servicies
+    ports:
+      - "8084:8084"
+    environment:
+      - DATABASE_URL=jdbc:mysql://mysql-db:3306/integrador_ventas
+      - DATABASE_USERNAME=root
+      - DATABASE_PASSWORD=181222root
+    depends_on:
+      - mysql-db
+    networks:
+      - 'tiendaelectrodomesticos-network'
+  api-gateway:
+    container_name: api-gateway
+    image: api-gateway:1
+    build: api-gateway
+    ports:
+      - "2906:2906"
+    depends_on:
+      - eureka-sv
+    networks:
+      - 'tiendaelectrodomesticos-network'
+  config-server:
+    container_name: config-server
+    image: config-server:1
+    build: config-server
+    ports:
+      - "8085:8085"
+    depends_on:
+      - eureka-sv
+    networks:
+      - 'tiendaelectrodomesticos-network'
+
+volumes:
+  mysql-db-data:
+  
+networks:
+  tiendaelectrodomesticos-network:
