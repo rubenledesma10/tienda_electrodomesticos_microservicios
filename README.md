@@ -4,8 +4,12 @@ Tienda de electrodomésticos online, que contiene 3 microservicios (en cada uno 
 Servicios desarrollados:
 
 -Microservicio Productos: Se encarga de gestionar la información de los electrodomésticos disponibles en la plataforma. Es capaz de listar los mismos y proporcionar detalles como código, nombre, marca y precio individual
+
 -Microservicio Carrito de Compras: Mediante este servicio, se podrá agregar y quitar productos de la lista de electrodomésticos de su carrito de compras. Cada carrito tendra su número de identificación (id) y un campo para almacenar el precio total de la sumatoria de todos los productos que se encuentren en el carrito
+
 -Microservicio de Ventas: Se encarga de registrar cada venta mediante un número de identificación y una fecha. Cada venta está asociada a un carrito de compras, por lo que al guardar una nueva venta se debe asignar, un carrito. A través de esta asociación, la venta puede conocer el monto total de la misma (consultando al carrito de compras) y la lista de productos (consultando al servicio de carrito de compras que a su vez consume el servicio de productos)
+
+
 Utilizando distintos patrones de diseño, como por ejemplo:
 
 -Eureka
