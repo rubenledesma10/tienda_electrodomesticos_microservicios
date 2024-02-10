@@ -13,10 +13,15 @@ Servicios desarrollados:
 Utilizando distintos patrones de diseño, como por ejemplo:
 
 -Eureka
+
 -Spring Cloud Load Balancer
+
 -Circuit Breaker mediante Resilience4J (utilizando también la annotation @Retry)
+
 -API Gateway
+
 -Config server
+
 Utilizo Docker para deployar la aplicación
 
 Tecnologías: Spring Boot, Java, Spring Cloud, Docker, APIs Rest, Hibernate, Postman, MySQL.
