@@ -1,4 +1,5 @@
 Tienda de Electrodomésticos
+
 Tienda de electrodomésticos online, que contiene 3 microservicios (en cada uno de los servicios se puede llevar a cabo los CRUD correspondiente de cada uno) que se encargaran de diferentes aspectos del sistema, comunicandose entre ellos para brindar una experiencia de compra fluida a cada uno de los usuarios
 
 Servicios desarrollados:
