@@ -1,8 +1,8 @@
 👨🏾‍💻 Tienda de Electrodomésticos
 
-💻 Tienda de electrodomésticos online, que contiene 3 microservicios (en cada uno de los servicios se puede llevar a cabo los CRUD correspondiente de cada uno) que se encargaran de diferentes aspectos del sistema, comunicandose entre ellos para brindar una experiencia de compra fluida a cada uno de los usuarios
+✅ Tienda de electrodomésticos online, que contiene 3 microservicios (en cada uno de los servicios se puede llevar a cabo los CRUD correspondiente de cada uno) que se encargaran de diferentes aspectos del sistema, comunicandose entre ellos para brindar una experiencia de compra fluida a cada uno de los usuarios
 
-💻 Servicios desarrollados:
+✅ Servicios desarrollados:
 
 🧉 Microservicio Productos: Se encarga de gestionar la información de los electrodomésticos disponibles en la plataforma. Es capaz de listar los mismos y proporcionar detalles como código, nombre, marca y precio individual
 
@@ -11,7 +11,7 @@
 🧉 Microservicio de Ventas: Se encarga de registrar cada venta mediante un número de identificación y una fecha. Cada venta está asociada a un carrito de compras, por lo que al guardar una nueva venta se debe asignar, un carrito. A través de esta asociación, la venta puede conocer el monto total de la misma (consultando al carrito de compras) y la lista de productos (consultando al servicio de carrito de compras que a su vez consume el servicio de productos)
 
 
-💻 Utilizando distintos patrones de diseño, como por ejemplo:
+✅ Utilizando distintos patrones de diseño, como por ejemplo:
 
 🧉 Eureka
 
@@ -25,4 +25,4 @@
 
 🧉 Utilizo Docker para deployar la aplicación
 
-Tecnologías: Spring Boot, Java, Spring Cloud, Docker, APIs Rest, Hibernate, Postman, MySQL.
+✅ Tecnologías: Spring Boot, Java, Spring Cloud, Docker, APIs Rest, Hibernate, Postman, MySQL.
